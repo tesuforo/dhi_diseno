@@ -19,14 +19,17 @@ const AppMenu = () => {
             label: 'UI Components',
             items: [
                 { label: 'Paciente', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-                { label: 'Historia Clinica', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
-                { label: 'Consulta por Primera Vez', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
+                
+                 { label: 'Consulta por Primera Vez', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
+
+                { label: 'Historia Clinica Paciente Resumen', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
+                  { label: 'Resumen', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
                 { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
                 { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
                 { label: 'Table', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
                 { label: 'List', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
                 { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/uikit/tree' },
-                { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
+                
                 { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/uikit/overlay' },
                 { label: 'Media', icon: 'pi pi-fw pi-image', to: '/uikit/media' },
                 { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/uikit/menu', preventExact: true },

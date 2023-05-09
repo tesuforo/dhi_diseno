@@ -16,74 +16,88 @@ import { Knob } from 'primereact/knob';
     const FormLayoutDemo = () => {
         const [countries, setCountries] = useState([]);
         const [filteredCountries, setFilteredCountries] = useState(null);
-        const [value1, setValue1] = useState('');
-        const [value2, setValue2] = useState(null);
-        const [value3, setValue3] = useState('');
-        const [value4, setValue4] = useState('');
-        const [value5, setValue5] = useState('');
-        const [value6, setValue6] = useState([]);
-        const [value7, setValue7] = useState('');
-        const [value8, setValue8] = useState(null);
-        const [value9, setValue9] = useState('');
-        const [value10, setValue10] = useState(null);
-        const [value11, setValue11] = useState(null);
-        const [value12, setValue12] = useState('');
-    const [floatValue, setFloatValue] = useState('');
-    const [autoValue, setAutoValue] = useState<Demo.Country[]>([]);
-    const [selectedAutoValue, setSelectedAutoValue] = useState(null);
-    const [autoFilteredValue, setAutoFilteredValue] = useState<Demo.Country[]>([]);
-    const [calendarValue, setCalendarValue] = useState(new Date());
-    const [inputNumberValue, setInputNumberValue] = useState<number | null>(null);
-    const [chipsValue, setChipsValue] = useState<any[]>([]);
-    const [sliderValue, setSliderValue] = useState<number | string>(10);
-    const [ratingValue, setRatingValue] = useState<number | undefined>(undefined);
-    const [colorValue, setColorValue] = useState('1976D2');
-    const [knobValue, setKnobValue] = useState(90);
-    const [radioValue, setRadioValue] = useState(null);
-    const [checkboxValue, setCheckboxValue] = useState<string[]>([]);
-    const [switchValue, setSwitchValue] = useState(false);
-    const [listboxValue, setListboxValue] = useState(null);
-    const [dropdownValue, setDropdownValue] = useState(null);
-    const [multiselectValue, setMultiselectValue] = useState(null);
-    const [toggleValue, setToggleValue] = useState(false);
-    const [selectButtonValue1, setSelectButtonValue1] = useState(null);
-    const [selectButtonValue2, setSelectButtonValue2] = useState(null);
-    const [inputGroupValue, setInputGroupValue] = useState(false);
-    const [selectedNode, setSelectedNode] = useState<TreeSelectSelectionKeysType | null>(null);
-    const [treeSelectNodes, setTreeSelectNodes] = useState<TreeNode[]>([]);
+        const [identificacion, setIdentificacion] = useState('');
+        const [name1, setName1] = useState('');
+        const [apellido1, setApellido1] = useState('');
+        const [apellido2, setApellido2] = useState('');
+        const [edad, setEdad] = useState('');
+        const [acudiente, setAcudiente] = useState('');
+        const [telacudiente, setTelAcudiente] = useState('');
+        const [comentario, setComentario] = useState('');
+        const [ocupacion, setOcupacion] = useState('');
+
+        const [telefono1, setTelefono1] = useState('');
+        const [telefono2, setTelefono2] = useState(null);
+        const [correo, setCorreo] = useState('');
+        const [direccion, setDireccion] = useState('');
+
+        const [lugexpdoc, setLugExpDoc] = useState('');
+        const [expdoc, setExpDoc] = useState('');
+        const [pais, setPais] = useState('');
+        const [departamento, setDepartamento] = useState('');
+        const [fechanaci, setFechaNaci] = useState([]);
+        const [municipio, setMunicipio] = useState(null);
+        const [comercial, setComercial] = useState(null);
+        const [asegurador, SetAsegurdador] = useState(null);
+        const [zonas, setZona] = useState('');
+        const [regimen, setRegimen] = useState('');
+        const [profesional, setProfesional] = useState('');
+
+        const [floatValue, setFloatValue] = useState('');
+        const [autoValue, setAutoValue] = useState<Demo.Country[]>([]);
+        const [selectedAutoValue, setSelectedAutoValue] = useState(null);
+        const [autoFilteredValue, setAutoFilteredValue] = useState<Demo.Country[]>([]);
+        const [calendarValue, setCalendarValue] = useState(new Date());
+        const [inputNumberValue, setInputNumberValue] = useState<number | null>(null);
+        const [chipsValue, setChipsValue] = useState<any[]>([]);
+
+
+        const [sliderValue, setSliderValue] = useState<number | string>(10);
+        const [ratingValue, setRatingValue] = useState<number | undefined>(undefined);
+        const [colorValue, setColorValue] = useState('1976D2');
+        const [knobValue, setKnobValue] = useState(90);
+        const [radioValue, setRadioValue] = useState(null);
+        const [checkboxValue, setCheckboxValue] = useState<string[]>([]);
+        const [switchValue, setSwitchValue] = useState(false);
+        const [listboxValue, setListboxValue] = useState(null);
+        const [dropdownValue, setDropdownValue] = useState(null);
+        const [multiselectValue, setMultiselectValue] = useState(null);
+        const [toggleValue, setToggleValue] = useState(false);
+        const [selectButtonValue1, setSelectButtonValue1] = useState(null);
+        const [selectButtonValue2, setSelectButtonValue2] = useState(null);
+        const [inputGroupValue, setInputGroupValue] = useState(false);
+        const [selectedNode, setSelectedNode] = useState<TreeSelectSelectionKeysType | null>(null);
+        const [treeSelectNodes, setTreeSelectNodes] = useState<TreeNode[]>([]);
 
       
-    const [dropdownItem, setDropdownItem] = useState(null);
-    const dropdownItems = [
+    const [tipodoc, setTipoDoc] = useState(null);
+    const tipoDoc = [
         { name: 'CC', code: 'CC' },
         { name: 'CE', code: 'CE' },
         { name: 'TI', code: 'TI' },
-        { name: 'PA', code: 'PA' }
+        { name: 'PA', code: 'PA' },
     ];
 
-
-    const [dropdownItem1, setDropdownItem1] = useState(null);
-    const dropdownItems1 = [
+    const [tiposexo, setSexo] = useState(null);
+    const tipoSexo = [
         { name: 'F', code: 'F' },
         { name: 'M', code: 'M' },
    
     ];
 
-       const [dropdownItem2, setDropdownItem2] = useState(null);
-    const dropdownItems2 = [
+       const [extranjero, setExtranjero] = useState(null);
+    const Extranjero = [
         { name: 'Si', code: 'Si' },
         { name: 'No', code: 'No' },
         
     ];
 
-     const [dropdownItem3, setDropdownItem3] = useState(null);
-    const dropdownItems3 = [
+     const [estadocivil, setEstadoCivil] = useState(null);
+    const EstadoCivil = [
         { name: 'Casado', code: 'Casado' },
         { name: 'Union Libre', code: 'Union Libre' },
         
     ];  
-
-
 
      const cities = [
         { name: 'Colombia', code: 'Colombia' },
@@ -96,7 +110,7 @@ import { Knob } from 'primereact/knob';
         { name: 'gabriel', code: 'Gabriel' },
        
     ];
- const profesional = [
+ const profesionales = [
         { name: 'lida', code: 'lida' },
         { name: 'marcela', code: 'Marcela' },
        
@@ -124,17 +138,18 @@ import { Knob } from 'primereact/knob';
     ];
         
 
-    const tipo_usuario = [
+    const usuarios = [
         { name: 'contributivo', code: 'contributivo' },
         { name: 'subsidiado', code: 'Subsidiado' },
        
     ];
         
-    
-    
-   
-    
-   
+     const aseguradores = [
+        { name: 'Compensar', code: 'Compensar' },
+        { name: 'Cafam', code: 'Cafam' },
+       
+    ];
+        
     
 
     return (
@@ -145,39 +160,32 @@ import { Knob } from 'primereact/knob';
 
                      <div className="field">
                             <label htmlFor="tipo_id">Tipo Doc</label>
-                            <Dropdown id="tipo_id" value={dropdownItem} onChange={(e) => setDropdownItem(e.value)} options={dropdownItems} optionLabel="name" placeholder="Select One"></Dropdown>
+                            <Dropdown id="tipo_id" value={tipodoc} onChange={(e) => setTipoDoc(e.value)} options={tipoDoc} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
                     <div className="field">
-                        <label htmlFor="identificacion1">Identificación</label>
-                        <InputText id="identificacion1" type="text" />
+                        <label htmlFor="identificacion">Identificación</label>
+                        <InputText id="identificacion" type="text" />
                     </div>
-                     
-                   
-
                      <div className="field">
                          <label htmlFor="expdoc">Fecha Expedición Documento</label>
                     <span className="p-float-label">
                         <label htmlFor="calendar">Fecha</label>
                         <label htmlFor="expdoc">Fecha de Expedición documento</label>
-                        <Calendar inputId="calendar" value={value5} onChange={(a) => setValue5(a.expdoc)}></Calendar>
-                        
+                        <Calendar inputId="calendar" value={expdoc} onChange={(a) => setExpDoc(a.expdoc)}></Calendar> 
                     </span>
                 </div>
-
                 <div className="field">
                     <label htmlFor="lugexpdoc">Lugar Expedición Documento</label>
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={Municipio} value={value4} onChange={(e) => setValue4(e.value)} optionLabel="name"></Dropdown>
-                        
+                        <Dropdown id="dropdown" options={Municipio} value={lugexpdoc} onChange={(e) => setLugExpDoc(e.value)} optionLabel="name"></Dropdown>   
                     </span>
                 </div>  
 
                   <div className="field">
-                         <label htmlFor="fechnaci">Fecha Nacimiento</label>
+                         <label htmlFor="fechanaci">Fecha Nacimiento</label>
                     <span className="p-float-label">
-                        
-                        <label htmlFor="fechnaci">Fecha de Nacimiento</label>
-                        <Calendar inputId="calendar" value={value6} onChange={(e) => setValue6(e.value)}></Calendar>
+                        <label htmlFor="fechanaci">Fecha de Nacimiento</label>
+                        <Calendar inputId="calendar" value={fechanaci} onChange={(e) => setFechaNaci(e.value)}></Calendar>
                     </span>
                 </div>
          
@@ -187,8 +195,12 @@ import { Knob } from 'primereact/knob';
                         <InputText id="name1" type="text" />
                     </div>
                      <div className="field">
-                        <label htmlFor="name2">Apellidos</label>
-                        <InputText id="name2" type="text" />
+                        <label htmlFor="apellido1">Apellido Paterno</label>
+                        <InputText id="apellido1" type="text" />
+                    </div>
+                    <div className="field">
+                        <label htmlFor="apellido2">Apellidos Materno</label>
+                        <InputText id="apellido2" type="text" />
                     </div>
                     <div className="field">
                         <label htmlFor="edad">Edad</label>
@@ -198,18 +210,18 @@ import { Knob } from 'primereact/knob';
 
                     <div className="field">
                             <label htmlFor="sexo">sexo</label>
-                            <Dropdown id="sexo" value={dropdownItem1} onChange={(e) => setDropdownItem1(e.value)} options={dropdownItems1} optionLabel="name" placeholder="Select One"></Dropdown>
+                            <Dropdown id="sexo" value={tiposexo} onChange={(e) => setSexo(e.value)} options={tipoSexo} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
 
                      <div className="field">
-                            <label htmlFor="sexo">Extranejero</label>
-                            <Dropdown id="sexo" value={dropdownItem2} onChange={(e) => setDropdownItem2(e.value)} options={dropdownItems2} optionLabel="name" placeholder="Select One"></Dropdown>
+                            <label htmlFor="extranjero">Extranejero</label>
+                            <Dropdown id="extranjero" value={extranjero} onChange={(e) => setExtranjero(e.value)} options={Extranjero} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
 
                    
                     <div className="field">
                             <label htmlFor="estado_civil">Estado Civil</label>
-                            <Dropdown id="estado_civil" value={dropdownItem3} onChange={(e) => setDropdownItem3(e.value)} options={dropdownItems3} optionLabel="name" placeholder="Select One"></Dropdown>
+                            <Dropdown id="estado_civil" value={estadocivil} onChange={(e) => setEstadoCivil(e.value)} options={EstadoCivil} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
                       <div className="field">
                         <label htmlFor="ocupacion">Ocupación</label>
@@ -231,28 +243,28 @@ import { Knob } from 'primereact/knob';
 
                    <div className="field col">
                     <span className="p-float-label">
-                        <Dropdown id="multiselect" options={cities} value={value9} onChange={(e) => setValue9(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="multiselect" options={cities} value={pais} onChange={(e) => setPais(e.value)} optionLabel="Pais"></Dropdown>
                         <label htmlFor="multiselect">Pais</label>
                     </span>
                 </div>
 
                  <div className="field col">
                     <span className="p-float-label">
-                        <Dropdown id="depart" options={departa} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="depart">Departamento</label>
+                        <Dropdown id="departamento" options={departa} value={departamento} onChange={(e) => setDepartamento(e.value)} optionLabel="Departamento"></Dropdown>
+                        <label htmlFor="departamento">Departamento</label>
                     </span>
                 </div>
                 
                 <div className="field col">
                     <span className="p-float-label">
-                        <Dropdown id="municipio" options={Municipio} value={value11} onChange={(e) => setValue11(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="municipio" options={Municipio} value={municipio} onChange={(e) => setMunicipio(e.value)} optionLabel="Municipio"></Dropdown>
                         <label htmlFor="municipio">Municipio</label>
                     </span>
                   </div>
 
                  <div className="field col">
                     <span className="p-float-label">
-                        <Dropdown id="zona" options={zona} value={value12} onChange={(e) => setValue12(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="zona" options={zona} value={zonas} onChange={(e) => setZona(e.value)} optionLabel="name"></Dropdown>
                         <label htmlFor="zona">Zona</label>
                     </span>
                      </div>
@@ -275,28 +287,29 @@ import { Knob } from 'primereact/knob';
                 <div className="card p-fluid">
                     <h5>Comunicación</h5>
                     <div className="field grid">
-                        <label htmlFor="name3" className="col-12 mb-2 md:col-2 md:mb-0">
+                        <label htmlFor="telefono1" className="col-12 mb-2 md:col-2 md:mb-0">
                             Telefono 1
                         </label>
                         <div className="col-12 md:col-10">
-                            <InputText id="name3" type="text" />
+                            
+                            <InputText id="telefono1" type="text" />
                         </div>
                     </div>
                     <div className="field grid">
-                        <label htmlFor="email3" className="col-12 mb-2 md:col-2 md:mb-0">
+                        <label htmlFor="telefono2" className="col-12 mb-2 md:col-2 md:mb-0">
                             Telefono 2
                         </label>
                         <div className="col-12 md:col-10">
-                            <InputText id="email3" type="text" />
+                            <InputText id="telefono2" type="text" />
                         </div>
                     </div>
 
                      <div className="field grid">
-                        <label htmlFor="email4" className="col-12 mb-2 md:col-2 md:mb-0">
+                        <label htmlFor="correo" className="col-12 mb-2 md:col-2 md:mb-0">
                             Correo
                         </label>
                         <div className="col-12 md:col-10">
-                            <InputText id="email4" type="text" />
+                            <InputText id="correo" type="text" />
                         </div>
                     </div>
                 </div>
@@ -309,7 +322,7 @@ import { Knob } from 'primereact/knob';
                    <div className="field p-fluid">
                     <label htmlFor="multiselect">Asegurador</label>
                     <span className="p-float-label">
-                        <Dropdown id="multiselect" options={tipo_usuario} value={value3} onChange={(e) => setValue3(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="multiselect" options={aseguradores} value={asegurador} onChange={(e) => SetAsegurdador(e.value)} optionLabel="Asegurador"></Dropdown>
                          <small>Asegurador del Paciente</small>
                     </span>
                 </div>
@@ -317,7 +330,7 @@ import { Knob } from 'primereact/knob';
                    <div className="field p-fluid">
                     <label htmlFor="multiselect">Regimen</label>
                     <span className="p-float-label">
-                        <Dropdown id="multiselect" options={tipo_usuario} value={value3} onChange={(e) => setValue3(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="multiselect" options={usuarios} value={regimen} onChange={(e) => setRegimen(e.value)} optionLabel="Regimen"></Dropdown>
                          <small>Regimen del paciente</small>
                     </span>
                 </div>
@@ -348,13 +361,7 @@ import { Knob } from 'primereact/knob';
                 </div>
 
 
-
                 </div>
-
-
-
-
-
                 
 
                  <div className="card">
@@ -363,8 +370,7 @@ import { Knob } from 'primereact/knob';
                     <h5>Comercial</h5>
                     </div><div className="field p-fluid">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={Comercial} value={value8} onChange={(e) => setValue8(e.value)} optionLabel="name"></Dropdown>
-                        
+                        <Dropdown id="dropdown" options={Comercial} value={comercial} onChange={(e) => setComercial(e.value)} optionLabel="Comercial"></Dropdown>   
                     </span>
                 </div>
                 </div>
@@ -375,7 +381,7 @@ import { Knob } from 'primereact/knob';
                     <h5>Medico que lo atiende </h5>
                     </div><div className="field p-fluid">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={profesional} value={value2} onChange={(e) => setValue2(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="dropdown" options={profesionales} value={profesional} onChange={(e) => setProfesional(e.value)} optionLabel="Profesional"></Dropdown>
                         
                     </span>
                 </div>
@@ -387,29 +393,28 @@ import { Knob } from 'primereact/knob';
                     <h5>Datos Avanzados</h5>
                     <div className="p-fluid formgrid grid">
                         <div className="field col-12 md:col-6">
-                            <label htmlFor="firstname2">Acudiente:</label>
-                            <InputText id="firstname2" type="text" />
+                            <label htmlFor="acudiente">Acudiente:</label>
+                            <InputText id="acudiente" type="text" />
                         </div>   <div className="field col-12 md:col-6">
-                            <label htmlFor="firstname2">Acudiente Telefono:</label>
-                            <InputText id="firstname2" type="text" />
+                            <label htmlFor="telacudiente">Acudiente Telefono:</label>
+                            <InputText id="telacudiente" type="text" />
                         </div>
 
-
                         <div className="field col-12 md:col-6">
-                            <label htmlFor="lastname2">Ocupación</label>
-                            <InputText id="lastname2" type="text" />
+                            <label htmlFor="ocupacion">Ocupación</label>
+                            <InputText id="ocupacion" type="text" />
                         </div>
                         <div className="field col-12">
-                            <label htmlFor="address">Comentario</label>
-                            <InputTextarea id="address" rows="4" />
+                            <label htmlFor="comentario">Comentario</label>
+                            <InputTextarea id="comentario" rows="4" />
                         </div>
                             <div className="field col-12 md:col-6">
-                            <label htmlFor="sexo">Exceptpo de Reponsabilidad Civil</label>
-                            <Dropdown id="sexo" value={dropdownItem2} onChange={(e) => setDropdownItem2(e.value)} options={dropdownItems2} optionLabel="name" placeholder="Select One"></Dropdown>
+                            <label htmlFor="sexo">Excepto de Reponsabilidad Civil</label>
+                            <Dropdown id="sexo" value={extranjero} onChange={(e) => setExtranjero(e.value)} options={Extranjero} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
                         <div className="field col-12 md:col-6">
-                            <label htmlFor="city">Responsabilidad Fiscal</label>
-                            <InputText id="city" type="text" />
+                            <label htmlFor="responsabilidad_civil">Responsabilidad Fiscal</label>
+                            <InputText id="responsabilidad_civil" type="text" />
                         </div>
                         
 

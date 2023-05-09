@@ -27,8 +27,38 @@ const FloatLabelDemo = () => {
     const [value10, setValue10] = useState(null);
     const [value11, setValue11] = useState(null);
     const [value12, setValue12] = useState('');
-     const [value20, setDate20] = useState(null);
+     
       const [value13, setValue13] = useState('');
+      const [horaapertura, setHoraApertura] = useState('');
+       const [motivoconsulta, setMotivoConsulta] = useState('');
+       const [enfermedadactual, setEnfermedadActual] = useState('');
+       const [neurologico, setNeurologico] = useState('Niega');
+        const [desneurologico, setDesNeurologico] = useState(null);
+        const [organosentidos, setOrganSentidos] = useState('Niega');
+        const [desorganosentidos, setDesOrganSentidos] = useState(null);
+        const [osteomuscular, setOsteomuscular] = useState('Niega');
+        const [desosteomuscular, setDesOsteomuscular] = useState('');
+        const [cardiopulmonar, setCardioPulmonar] = useState('Niega');
+        const [descardiopulmonar, setDesCardioPulmonar] = useState('');
+        const [gastrointestinal, setGastrointestinal] = useState('Niega');
+        const [desgastrointestinal, setDesGastrointestinal] = useState('');
+         const [genitourinario, setGenitourinario] = useState('Niega');
+        const [desgenitourinario, setDesGenitourinario] = useState('');
+         const [endocrinoinmunologico, setEndocrinoInmunologico] = useState('Niega');
+        const [desendocrinoinmunologico, setDesEndocrinoInmunologico] = useState('');
+        const [pielanexos, setPielAnexos] = useState('Niega');
+        const [despielanexos, setDesPielAnexos] = useState('');
+
+
+
+
+
+        
+       
+
+
+
+
     
 
     const cities = [
@@ -39,7 +69,13 @@ const FloatLabelDemo = () => {
         { name: 'Paris', code: 'PRS' }
     ];
 
-    const neurologico = [
+    const revision_sistema = [
+        { name: 'Niega', code: 'Niega' },
+        { name: 'Refiere', code: 'Refiere' },
+     
+    ];
+
+      const antecedentes = [
         { name: 'Niega', code: 'Niega' },
         { name: 'Refiere', code: 'Refiere' },
      
@@ -69,204 +105,318 @@ const FloatLabelDemo = () => {
             <h5>Consulta por Primera Vez</h5>
             <div className="grid p-fluid mt-3">
                 <div className="field col-12 md:col-4">
-                 <label htmlFor="identificacion1">Hora de apertura</label>
-                <Calendar showTime hourFormat="12" value={value20} onChange={(e) => setDate20(e.value)}></Calendar>
+                 <label htmlFor="hora_apertura">Hora de apertura</label>
+                <Calendar showTime hourFormat="12" value={horaapertura} onChange={(e) => setHoraApertura(e.value)}></Calendar>
                 
                 </div>
 
                 <div className="field col-12 md:col-4">
                     <span className="p-float-label">
-                        <InputTextarea id="textarea" rows={3} value={value12} onChange={(e) => setValue12(e.target.value)} autoResize></InputTextarea>
-                        <label htmlFor="textarea">Motivode Consulta</label>
+                        <InputTextarea id="motivo_consulta" rows={3} value={motivoconsulta} onChange={(e) => setMotivoConsulta(e.target.value)} autoResize></InputTextarea>
+                        <label htmlFor="motivo_consulta">Motivode Consulta</label>
                     </span>
                 </div>
 
               <div className="field col-12 md:col-4">
                     <span className="p-float-label">
-                        <InputTextarea id="textarea" rows={3} value={value13} onChange={(e) => setValue13(e.target.value)} autoResize></InputTextarea>
+                        <InputTextarea id="textarea" rows={3} value={enfermedadactual} onChange={(e) => setEnfermedadActual(e.target.value)} autoResize></InputTextarea>
                         <label htmlFor="textarea">Enfermedad Actual</label>
                     </span>
                 </div>
+                
+
+                        <div className="card">
+  <h5>Revision por sistema</h5>
+   <div className="grid p-fluid mt-3">
+  
+
+
+          
+             
                
                <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="dropdown" options={revision_sistema} value={neurologico} onChange={(e) => setNeurologico(e.value)} optionLabel="name"></Dropdown>
                         <label htmlFor="dropdown">Neurológico</label>
                     </span>
                 </div>
 
                 <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <AutoComplete id="autocomplete" value={desneurologico} onChange={(e) => setDesNeurologico(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
                         <label htmlFor="autocomplete"> Descripción Neurológico</label>
                     </span>
                 </div>
 
+
+
                  <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="dropdown" options={revision_sistema} value={organosentidos} onChange={(e) => setOrganSentidos(e.value)} optionLabel="name"></Dropdown>
                         <label htmlFor="dropdown">Órgano de los sentidos</label>
                     </span>
                 </div>
 
                 <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <AutoComplete id="autocomplete" value={desorganosentidos} onChange={(e) => setDesOrganSentidos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
                         <label htmlFor="autocomplete"> Descripción Órgano de los sentidos </label>
                     </span>
                 </div>
                <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
+                        <Dropdown id="dropdown" options={revision_sistema} value={osteomuscular} onChange={(e) => setOsteomuscular(e.value)} optionLabel="name"></Dropdown>
                         <label htmlFor="dropdown">Osteomuscular</label>
                     </span>
                 </div>
 
                 <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <AutoComplete id="autocomplete" value={desosteomuscular} onChange={(e) => setDesOsteomuscular(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
                         <label htmlFor="autocomplete"> Descripción Osteomuscular </label>
                     </span>
                 </div>
-   <div className="field col-12 md:col-3">
-                    <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="dropdown">Cardiopulmonar</label>
-                    </span>
-                </div>
 
-                <div className="field col-12 md:col-3">
-                    <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
-                        <label htmlFor="autocomplete"> Descripción Cardiopulmonar </label>
-                    </span>
-                </div>
-   <div className="field col-12 md:col-3">
-                    <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="dropdown">Gastrointestinal</label>
-                    </span>
-                </div>
 
-                <div className="field col-12 md:col-3">
+
+
+
+                  <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
-                        <label htmlFor="autocomplete"> Descripción Gastrointestinal </label>
+                        <Dropdown id="cardiopulmonar" options={revision_sistema} value={cardiopulmonar} onChange={(e) => setCardioPulmonar(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="cardiopulmonar">Cardiopulmonar</label>
                     </span>
                 </div>
 
                  <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="dropdown">Genitourinario </label>
+                        <AutoComplete id="descardiopulmonar" value={descardiopulmonar} onChange={(e) => setDesCardioPulmonar(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="descardiopulmonar"> Descripción Cardiopulmonar </label>
+                    </span>
+                 </div>
+
+                  <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="gastrointestinal" options={revision_sistema} value={gastrointestinal} onChange={(e) => setGastrointestinal(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="gastrointestinal">Gastrointestinal</label>
                     </span>
                 </div>
 
                 <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
-                        <label htmlFor="autocomplete"> Descripción Genitourinario  </label>
+                        <AutoComplete id="des" value={desgastrointestinal} onChange={(e) => setDesGastrointestinal(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="des"> Descripción Gastrointestinal </label>
                     </span>
                 </div>
 
- <div className="field col-12 md:col-3">
+                 <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="dropdown">Endocrino-inmunológico </label>
-                    </span>
-                </div>
-
-                <div className="field col-12 md:col-3">
-                    <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
-                        <label htmlFor="autocomplete"> Descripción Endocrino-inmunológico  </label>
-                    </span>
-                </div>
-
-
- <div className="field col-12 md:col-3">
-                    <span className="p-float-label">
-                        <Dropdown id="dropdown" options={neurologico} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="dropdown">Piel y anexos   </label>
+                        <Dropdown id="Genitourinario" options={revision_sistema} value={genitourinario} onChange={(e) => setGenitourinario(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="Genitourinario">Genitourinario </label>
                     </span>
                 </div>
 
                 <div className="field col-12 md:col-3">
                     <span className="p-float-label">
-                        <AutoComplete id="autocomplete" value={value2} onChange={(e) => setValue2(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <AutoComplete id="desgenitourinario" value={desgenitourinario} onChange={(e) => setDesGenitourinario(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="desgenitourinario"> Descripción Genitourinario  </label>
+                    </span>
+                </div>
+
+              <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="Endocrino_inmunologico" options={revision_sistema} value={endocrinoinmunologico} onChange={(e) => setEndocrinoInmunologico(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="Endocrino_inmunologico">Endocrino-inmunológico </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="desendocrinoinmunologico" value={desendocrinoinmunologico} onChange={(e) => setDesEndocrinoInmunologico(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="desendocrinoinmunologico"> Descripción Endocrino-inmunológico  </label>
+                    </span>
+                </div>
+
+
+                   <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Piel y anexos   </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
                         <label htmlFor="autocomplete"> Descripción Piel y Anexos</label>
                     </span>
                 </div>
 
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label p-input-icon-left">
-                        <i className="pi pi-search" />
-                        <InputText id="lefticon" value={value3} onChange={(e) => setValue3(e.target.value)} />
-                        <label htmlFor="lefticon">Left Icon</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label p-input-icon-right">
-                        <i className="pi pi-spin pi-spinner" />
-                        <InputText id="righticon" value={value4} onChange={(e) => setValue4(e.target.value)} />
-                        <label htmlFor="righticon">Right Icon</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <Calendar inputId="calendar" value={value5} onChange={(e) => setValue5(e.value as Date)}></Calendar>
-                        <label htmlFor="calendar">Calendar</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <Chips inputId="chips" value={value6} onChange={(e) => setValue6(e.value ?? [])}></Chips>
-                        <label htmlFor="chips">Chips</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <InputMask id="inputmask" mask="99/99/9999" slotChar="mm/dd/yyyy" value={value7} onChange={(e) => setValue7(e.value ?? '')}></InputMask>
-                        <label htmlFor="inputmask">InputMask</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <InputNumber id="inputnumber" value={value8} onValueChange={(e) => setValue8(e.target.value ?? null)}></InputNumber>
-                        <label htmlFor="inputnumber">InputNumber</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <div className="p-inputgroup">
-                        <span className="p-inputgroup-addon">
-                            <i className="pi pi-user"></i>
-                        </span>
-                        <span className="p-float-label">
-                            <InputText type="text" id="inputgroup" value={value9} onChange={(e) => setValue9(e.target.value)} />
-                            <label htmlFor="inputgroup">InputGroup</label>
-                        </span>
-                    </div>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <Dropdown id="dropdown" options={cities} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="dropdown">Dropdown</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <MultiSelect id="multiselect" options={cities} value={value11} onChange={(e) => setValue11(e.value)} optionLabel="name"></MultiSelect>
-                        <label htmlFor="multiselect">MultiSelect</label>
-                    </span>
-                </div>
-                <div className="field col-12 md:col-4">
-                    <span className="p-float-label">
-                        <InputTextarea id="textarea" rows={3} value={value12} onChange={(e) => setValue12(e.target.value)} autoResize></InputTextarea>
-                        <label htmlFor="textarea">Textarea</label>
-                    </span>
-                </div>
             </div>
-        </div>
+         </div>
+
+
+
+
+           <div className="card">
+           <h5>Antecedentes</h5>
+           <div className="grid p-fluid mt-3">           
+                   <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="antecedentes_medicos" options={antecedentes} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Medicos  </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Medicos
+                        </label>
+                    </span>
+                </div>
+
+
+                       
+                   <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Familiares  </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Familiares</label>
+                    </span>
+                </div>
+       
+                   <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos"> Antecedentes Alopecia  </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Alopecia</label>
+                    </span>
+                </div>
+
+
+               
+                   <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Quirúrgicos   </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Quirúrgicos</label>
+                    </span>
+                </div>
+
+
+                 <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Hospitalarios   </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Hospitalarios</label>
+                    </span>
+                </div>
+
+
+
+ 
+
+               
+
+
+              <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Antecedentes Alérgicos   </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Alérgicos</label>
+                    </span>
+                </div>
+                 
+
+
+
+
+              <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Antecedentes Farmacológicos   </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Farmacológicos</label>
+                    </span>
+                </div>
+                 
+
+                  <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <Dropdown id="pielanexos" options={revision_sistema} value={pielanexos} onChange={(e) => setPielAnexos(e.value)} optionLabel="name"></Dropdown>
+                        <label htmlFor="pielanexos">Antecedentes Toxicos  </label>
+                    </span>
+                </div>
+
+                <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Descripción Antecedentes Toxicos</label>
+                    </span>
+                </div>
+
+
+
+
+
+
+
+                  <div className="field col-12 md:col-3">
+                    <span className="p-float-label">
+                        <AutoComplete id="autocomplete" value={despielanexos} onChange={(e) => setDesPielAnexos(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                        <label htmlFor="autocomplete"> Tipo de Cicatrización</label>
+                    </span>
+                </div>
+
+
+
+
+           </div>
+           </div>
+             
+
+
+                
+                    
+            </div>
+            </div>
+        
     );
 };
 
