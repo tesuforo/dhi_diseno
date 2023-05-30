@@ -18,6 +18,7 @@ import { Knob } from 'primereact/knob';
         const [filteredCountries, setFilteredCountries] = useState(null);
         const [identificacion, setIdentificacion] = useState('');
         const [name1, setName1] = useState('');
+        const [name2, setname2] = useState('');
         const [apellido1, setApellido1] = useState('');
         const [apellido2, setApellido2] = useState('');
         const [edad, setEdad] = useState('');
@@ -42,6 +43,7 @@ import { Knob } from 'primereact/knob';
         const [zonas, setZona] = useState('');
         const [regimen, setRegimen] = useState('');
         const [profesional, setProfesional] = useState('');
+         
 
         const [floatValue, setFloatValue] = useState('');
         const [autoValue, setAutoValue] = useState<Demo.Country[]>([]);
@@ -156,14 +158,14 @@ import { Knob } from 'primereact/knob';
         <div className="grid">
             <div className="col-12 md:col-6">
                 <div className="card p-fluid">
-                    <h5>Paciente DHI</h5>
+                    <h5>Paciente DHI Nacional y Extranjero</h5>
 
                      <div className="field">
-                            <label htmlFor="tipo_id">Tipo Doc</label>
+                            <label htmlFor="tipo_id">Tipo Doc -US  cargar Paises</label>
                             <Dropdown id="tipo_id" value={tipodoc} onChange={(e) => setTipoDoc(e.value)} options={tipoDoc} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
                     <div className="field">
-                        <label htmlFor="identificacion">Identificación</label>
+                        <label htmlFor="identificacion">Identificación -US</label>
                         <InputText id="identificacion" type="text" />
                     </div>
                      <div className="field">
@@ -191,15 +193,20 @@ import { Knob } from 'primereact/knob';
          
                    
                     <div className="field">
-                        <label htmlFor="name1">Nombres</label>
+                        <label htmlFor="name1">Nombre 1 -US</label>
                         <InputText id="name1" type="text" />
                     </div>
+                    <div className="field">
+                        <label htmlFor="name2">Nombre 2 -US</label>
+                        <InputText id="name2" type="text" />
+                    </div>
+
                      <div className="field">
-                        <label htmlFor="apellido1">Apellido Paterno</label>
+                        <label htmlFor="apellido1">Apellido Paterno US</label>
                         <InputText id="apellido1" type="text" />
                     </div>
                     <div className="field">
-                        <label htmlFor="apellido2">Apellidos Materno</label>
+                        <label htmlFor="apellido2">Apellidos Materno US</label>
                         <InputText id="apellido2" type="text" />
                     </div>
                     <div className="field">
@@ -209,7 +216,7 @@ import { Knob } from 'primereact/knob';
 
 
                     <div className="field">
-                            <label htmlFor="sexo">sexo</label>
+                            <label htmlFor="sexo">sexo -US</label>
                             <Dropdown id="sexo" value={tiposexo} onChange={(e) => setSexo(e.value)} options={tipoSexo} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
 
@@ -251,21 +258,21 @@ import { Knob } from 'primereact/knob';
                  <div className="field col">
                     <span className="p-float-label">
                         <Dropdown id="departamento" options={departa} value={departamento} onChange={(e) => setDepartamento(e.value)} optionLabel="Departamento"></Dropdown>
-                        <label htmlFor="departamento">Departamento</label>
+                        <label htmlFor="departamento">Departamento US</label>
                     </span>
                 </div>
                 
                 <div className="field col">
                     <span className="p-float-label">
                         <Dropdown id="municipio" options={Municipio} value={municipio} onChange={(e) => setMunicipio(e.value)} optionLabel="Municipio"></Dropdown>
-                        <label htmlFor="municipio">Municipio</label>
+                        <label htmlFor="municipio">Municipio US</label>
                     </span>
                   </div>
 
                  <div className="field col">
                     <span className="p-float-label">
                         <Dropdown id="zona" options={zona} value={zonas} onChange={(e) => setZona(e.value)} optionLabel="name"></Dropdown>
-                        <label htmlFor="zona">Zona</label>
+                        <label htmlFor="zona">Zona US</label>
                     </span>
                      </div>
                     </div>

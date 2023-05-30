@@ -23,7 +23,7 @@ const AppMenu = () => {
                  { label: 'Consulta por Primera Vez', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
 
                 { label: 'Historia Clinica Paciente Resumen', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
-                  { label: 'Resumen', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
+                  { label: 'Crear Cita, Mostar , editar , Borrar', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
                 { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
                 { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
                 { label: 'Table', icon: 'pi pi-fw pi-table', to: '/uikit/table' },

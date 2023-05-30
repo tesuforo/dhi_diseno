@@ -161,7 +161,7 @@ const Crud = () => {
         setProduct(_product);
     };
 
-    const onInputNumberChange = (e: InputNumberValueChangeEvent, name: string) => {
+    const onChange = (e: InputNumberValueChangeEvent, name: string) => {
         const val = e.value || 0;
         let _product = { ...product };
         _product[`${name}`] = val;
