@@ -59,6 +59,8 @@ export const InputDemo = () => {
     const [estados, setEstados] = useState(null);
     const [pagos, setPagos] = useState(null);
     const [agendas, setAgendas] = useState(null);
+    const [horainicio, SetHoraInicio] = useState(null);
+     const [horafinal, SetHoraFinal]= useState(null);
 
     
 
@@ -80,19 +82,30 @@ export const InputDemo = () => {
 
     const servicio: InputValue[] = [
         { name: '0-1', code: '0-1 500' },
-        { name: '1-500-2000', code: '500-2000 mil' },
+        { name: '1-500-2000 mil', code: '500-2000' },
+        { name: '10000 10500 mil', code: '10000-10500' },
+         { name: '10500 11000 mil', code: '10500-11000' },
+     
      
     ];
 
     const agenda: InputValue[] = [
-        { name: 'Consulta', code: 'Consulta Control' },
-        { name: 'Consulta Primera Vez', code: 'Consulta Primera vez' },
+        { name: 'Consulta Control', code: '890301 + 1 hora' },
+        { name: 'Consulta Primera Vez', code: '890201 + 1 hora' },
+        { name: 'Implante', code: '866402 + depende cantidad de pelos mas de 2 mil pelos 8 horas' },
+        { name: 'Lavado', code: 'Lavado + 1 hora' },
+        { name: 'Drenaje', code: 'Drenaje +20 minutos ' },
+         { name: 'Marcarilla capilar', code: 'Mascarilla capilar media hora' },
+           { name: 'Sueroterapia', code: 'Sueroterapia 2 minutos' },
+           { name: 'Micropigmentacion', code: 'Micropigmentacion + 5 horas' },
+           { name: 'Terapia Capilares', code: 'Terapia Capilares + media hora' },
+
      
     ];
 
     const estado: InputValue[] = [
-        { name: 'Consulta', code: 'Consulta Control' },
-        { name: 'Consulta Primera Vez', code: 'Consulta Primera vez' },
+        { name: 'Suspendido', code: 'Suspendido' },
+        { name: 'Confirmado', code: 'Confirmado' },
      
     ];
 
@@ -169,41 +182,60 @@ export const InputDemo = () => {
                 <div className="card">
                     <h5>Crear una Cita</h5>
                     <div className="grid formgrid">
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+                        <div className="field col-12 md:col-3">
+                            <label htmlFor="autocomplete"> Identificación </label>
                             <InputText type="text" placeholder="Identificación"></InputText>
+                             
                         </div>
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+                        <div className="field col-12 md:col-3">
+                            <label htmlFor="autocomplete">1 °Nombre </label>
                             <InputText type="text" placeholder="1 °Nombre"></InputText>
                         </div>
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+                        <div className="field col-12 md:col-3">
+                                 <label htmlFor="autocomplete">2 °Nombre </label>
                             <InputText type="text" placeholder="  2 °Nombre"></InputText>
                         </div>
 
+                         <div className="field col-12 md:col-3">
+                                 <label htmlFor="autocomplete">1 Apellido </label>
+                            <InputText type="text" placeholder="Apellido 1"></InputText>
+                        </div>
+                          <div className="field col-12 md:col-3">
+                                 <label htmlFor="autocomplete">2 Apellido </label>
+                            <InputText type="text" placeholder="Apellido 2"></InputText>
+                        </div>
 
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+
+
+                        <div className="field col-12 md:col-3">
+                                 <label htmlFor="autocomplete">Telefono </label>
                             <InputText type="text" placeholder="Telefono"  />
                         </div>
 
 
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+                        <div className="field col-12 md:col-6">
+                                 <label htmlFor="autocomplete">Correo </label>
                             <InputText type="text" placeholder="Correo"  />
+
+                            
                         </div>
 
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
-                          
-                        </div>
+                      
 
-                        <div className="col-12 mb-2 lg:col-4 lg:mb-0">
-
-                          <h5>Fecha Inicio</h5>
-                    <Calendar showIcon showButtonBar value={calendarValue} onChange={(e) => setCalendarValue(e.value as Date)}></Calendar>
-
-                    </div>
-                    <div className="col-12 mb-2 lg:col-4 lg:mb-0">
-                           <h5>Fecha Final</h5>
-                    <Calendar showIcon showButtonBar value={calendarValue} onChange={(e) => setCalendarValue(e.value as Date)}></Calendar>
+                        
+                        <div className="field col-12 md:col-3">
+                        
+                 <label htmlFor="hora_apertura">Hora de apertura</label>
+                <Calendar showTime hourFormat="12" value={horainicio} onChange={(e) => SetHoraInicio(e.value)}></Calendar>
+                
+            
 
                     </div>
+                    <div className="field col-12 md:col-3">
+                 <label htmlFor="hora_apertura">Hora de apertura</label>
+                <Calendar showTime hourFormat="12" value={horafinal} onChange={(e) => SetHoraFinal(e.value)}></Calendar>
+                
+                </div>
                     </div>
                  <div className="col-12 mb-2 lg:col-4 lg:mb-0">
                     <h5>Profesional</h5>
@@ -212,14 +244,35 @@ export const InputDemo = () => {
 
                   <div className="col-12 mb-2 lg:col-4 lg:mb-0">
                     <h5>Agenda</h5>
-                    <Dropdown value={estado} onChange={(e) => setServicios(e.value)} options={estado} optionLabel="name" placeholder="Select" />
+                    <Dropdown value={agendas} onChange={(e) => setAgendas(e.value)} options={agenda} optionLabel="name" placeholder="Select" />
                   </div>
                   <div className="col-12 mb-2 lg:col-4 lg:mb-0">
                   <h5>Observaciones</h5>
                     <InputTextarea placeholder="Observaciones" autoResize rows={3} cols={30} />
                    </div>
 
+                   <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+                    <h5>Acciones</h5>
+                    <div className="flex flex-wrap gap-2">
+                        <Button label="Registrar" rounded />
+                        
+                        
+                  
+                    </div>
+
+                     <div className="flex flex-wrap gap-2">
+                      
+                        <Button label="Agedar" severity="secondary" rounded />
+                        
+                  
+                    </div>
+
                   </div>
+                  </div>
+                  
+
+
+                  
 
 
 

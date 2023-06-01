@@ -21,12 +21,20 @@ const FloatLabelDemo = () => {
     const [countries, setCountries] = useState<Demo.Country[]>([]);
     const [filteredCountries, setFilteredCountries] = useState<Demo.Country[]>([]);
    
-    const [value5, setValue5] = useState(new Date());
-    const [value6, setValue6] = useState<any[]>([]);
-    const [value7, setValue7] = useState('');
-    const [value8, setValue8] = useState<number | null>(null);
+    const [tensiondiastolica, setTensionDiastolica] = useState(new Date());
+    const [tensionsiastolica, setTensionSiastolica] = useState<any[]>([]);
+    const [freuenciacardiaca, setFrecuenciaCardiaca] = useState('');
+     const [freuenciarespiraatoria, setFrecuenciaRespiratoria] = useState('');
+     const [saturacion, setSaturacion] = useState('');
+     const [peso, setPeso] = useState('');
+     const [talla, setTalla] = useState('');
+     const [temperatura, setTemperatura] = useState('');
    
-       const [value13, setValue13] = useState('');
+
+       
+
+
+
 
      const [selectedAutoValue, setSelectedAutoValue] = useState(null); 
      const [autoFilteredValue, setAutoFilteredValue] = useState<Demo.Country[]>([]);
@@ -541,37 +549,43 @@ const FloatLabelDemo = () => {
                             <div className="grid p-fluid mt-3">
 
                              <div className="field col-12 md:col-3">
-                                <h5>Tension Arterial</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                                <h5>Tension Arteria Diastolica</h5>
+                    <InputNumber value={tensiondiastolica} onValueChange={(e) => setTensionDiastolica(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+
+                         </div>
+
+                         <div className="field col-12 md:col-3">
+                                <h5>Tension Arterial Sistolica</h5>
+                    <InputNumber value={tensionsiastolica} onValueChange={(e) => setTensionSiastolica(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                          </div>
 
 
                    <div className="field col-12 md:col-3">
 
-                        <h5>PESO</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                        <h5>Peso kilogramos</h5>
+                    <InputNumber value={peso} onValueChange={(e) => setPeso(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                     </div>
 
                      <div className="field col-12 md:col-3">
 
-                        <h5>FC</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                        <h5>Frecuencia Cardiaca</h5>
+                    <InputNumber value={freuenciacardiaca} onValueChange={(e) => setFrecuenciaCardiaca(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                     </div>
 
                     <div className="field col-12 md:col-3">
 
-                        <h5>TALLA</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                        <h5>Talla  CM</h5>
+                    <InputNumber value={talla} onValueChange={(e) => setTalla(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                     </div>
 
                     <div className="field col-12 md:col-3">
 
-                        <h5>FR</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                        <h5>Frecuencia Respiratoria</h5>
+                    <InputNumber value={freuenciarespiraatoria} onValueChange={(e) => setFrecuenciaRespiratoria(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                     </div>
 
@@ -579,18 +593,19 @@ const FloatLabelDemo = () => {
 
                      <div className="field col-12 md:col-3">
 
-                        <h5>T</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                        <h5>Temperatura</h5>
+                    <InputNumber value={temperatura} onValueChange={(e) => setTemperatura(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                     </div>
                     
 
 
 
+
                      <div className="field col-12 md:col-3">
 
                         <h5>Saturación Oxigeno</h5>
-                    <InputNumber value={ta} onValueChange={(e) => setTA(e.value ?? null)} showButtons mode="decimal"></InputNumber>
+                    <InputNumber value={saturacion} onValueChange={(e) => setSaturacion(e.value ?? null)} showButtons mode="decimal"></InputNumber>
 
                     </div>
                     
