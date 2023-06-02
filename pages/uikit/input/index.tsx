@@ -338,21 +338,26 @@ export const InputDemo = () => {
                     <InputTextarea placeholder="Observaciones" autoResize rows={3} cols={30} />
                    </div>
 
-                   <div className="col-12 mb-2 lg:col-4 lg:mb-0">
-                    <h5>Acciones</h5>
-                    <div className="flex flex-wrap gap-2">
-                        <Button label="Registrar" rounded />
-                        
-                        
+
+
+             <div className="card">
+                <div className="grid formgrid">
+                   
+                   <h5>Acciones</h5>
+
                   
+                    <div className="field col-12 md:col-4">
+                        <Button label="Registrar" rounded />
                     </div>
 
-                     <div className="flex flex-wrap gap-2">
-                      
+
+
+                     <div className="field col-12 md:col-4">
                         <Button label="Agedar" severity="secondary" rounded />
-                        
-                  
                     </div>
+
+                    </div>
+                
 
                   </div>
                   </div>
@@ -406,7 +411,7 @@ export const InputDemo = () => {
 
                          </div>
 
-<div className="field col-12 md:col-3">
+              <div className="field col-12 md:col-3">
                         
                         </div>
 
@@ -462,18 +467,38 @@ export const InputDemo = () => {
                     <InputTextarea placeholder="Your Message" autoResize rows={3} cols={30} />
                     </div>
 
+               <div className="card">
+                <div className="grid formgrid">
 
-                  <div className="col-12 mb-2 lg:col-4 lg:mb-0">
-                    <h5>Acciones</h5>
-                    <div className="flex flex-wrap gap-2">
+
+
+                  <div className="field col-12 md:col-4">
                         <Button label="Insumos" rounded />
-                        <Button label="Perfil" severity="secondary" rounded />
-                        <Button label="Historico" severity="success" rounded />
-                        <Button label="Repetir" severity="info" rounded />
-                        <Button label="Pagar" severity="warning" rounded />
-                        <Button label="Guardar" severity="help" rounded />
-                        
                     </div>
+
+
+                     <div className="field col-12 md:col-4">
+                    <Button label="Perfil" severity="secondary" rounded />
+                    </div>
+
+                    <div className="field col-12 md:col-4">
+                        <Button label="Historico" severity="success" rounded />
+                        </div>
+                       <div className="field col-12 md:col-4">
+                        <Button label="Repetir" severity="info" rounded />
+                        </div>
+                       <div className="field col-12 md:col-4">
+                        
+                        <Button label="Pagar" severity="warning" rounded />
+                        </div>
+                        <div className="field col-12 md:col-4">
+                        <Button label="Guardar" severity="help" rounded />
+                     </div>
+
+                        </div>
+                 
+                        
+                
                 </div>
 
 
