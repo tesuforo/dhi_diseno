@@ -74,17 +74,104 @@ export const InputDemo = () => {
 
     const profesional: InputValue[] = [
         { name: 'Marcela Hoyos', code: 'Marcela Hoyos' },
-        { name: 'Natalia', code: 'NataliaM' },
-        { name: 'Lina', code: 'Lina' },
-        { name: 'Pedro', code: 'Pedro' },
-        { name: 'Juan', code: 'Juan' }
+        { name: 'Danny Ruggiero', code: 'Danny Ruggiero' },
+        { name: 'Eduardo Caballero', code: 'Eduardo Caballero' },
+        { name: 'Jenny Correa', code: 'Jenny Correa' },
+        { name: 'Jorge Rodriguez', code: 'Jorge Rodriguez ' }
     ];
 
     const servicio: InputValue[] = [
-        { name: '0-1', code: '0-1 500' },
-        { name: '1-500-2000 mil', code: '500-2000' },
-        { name: '10000 10500 mil', code: '10000-10500' },
-         { name: '10500 11000 mil', code: '10500-11000' },
+
+
+        { name: 'CONSULTA PRIMERA VEZ', code: 'CONSULTA PRIMERA VEZ0' },
+        { name: 'CONSULTA CONTROL IMPLANTE', code: 'CONSULTA CONTROL' },
+        { name: 'CONSULTA CONTROL TERAPIAS', code: 'CONSULTA CONTROL' },
+        { name: 'LASER', code: 'TERAPIAS POR SESIONES' },
+        { name: 'PLASMA', code: 'TERAPIAS POR SESIONES' },
+        { name: 'MESOTERAPIA', code: 'TERAPIAS POR SESIONES' },
+
+
+
+
+        { name: '0-500', code: '0-500' },
+        { name: '500-2000', code: '500-2000' },
+        { name: '000-2500', code: '0-2500' },
+        { name: '500-3000', code: '500-3000' },
+        { name: '000-3500', code: '000-3500' },
+        { name: '500-4000', code: '500-4000' },
+        { name:'000-4500', code: '000-4500' },
+        { name:'500-5000', code: '500-5000' },
+        { name:'000-5500', code: '000-5500' },
+        { name:'500-6000', code: '500-6000' },
+        { name:'000-6500', code: '000-6500' },
+        { name:'500-7000', code: '500-7000' },
+        { name:'7000-7500', code: '7000-7500' },
+        { name:'7500-8000', code: '7500-8000' },
+        { name:'8000-8500', code: '8000-8500' },
+        { name:'8500-9000', code: '8500-9000' },
+        { name:'9000-9500', code: '9000-9500' },
+        { name:'9500-10000', code: '9500-10000' },
+        { name:'retoque 0-500', code: 'retoque 0-500' },
+        { name:'Instrumentos 1 dia ( entrenamiento) ', code: 'Instrumentos 1 dia ( entrenamiento) ' },
+        { name:'retoque 500-1000', code: 'retoque 500-1000' },
+        { name:'Instrumentos 2 dias (entrenamiento) ', code: 'Instrumentos 2 dias (entrenamiento)' },
+        { name:'Instrumentos Implante ( entrenamiento) ', code: 'Instrumentos Implante ( entrenamiento) ' },
+        { name:'LASERTERAPIA CAPILAR', code: 'LASERTERAPIA CAPILAR' },
+        { name:'MESOTERAPIA CAPILAR', code: 'MESOTERAPIA CAPILAR' },
+        { name:'Cejas parcial', code: 'Cejas parcial' },
+        { name:'Cejas Total', code: 'Cejas Total' },
+        { name:'Micropigmentación 2 sesiones', code: 'Micropigmentación 2 sesiones' },
+        { name:'10.000 - 10.500', code: '10.000 - 10.500' },
+        { name:'Dutasteride 1 sesión', code: 'Dutasteride 1 sesión' },
+        { name:'Laserterapia Capilar', code: 'Laserterapia Capilar' },
+        { name:'Mesoteria Capilar', code: 'Mesoteria Capilar' },
+        { name:'11.000 - 11.500', code: '11.000 - 11.500' },
+        { name:'11.500 - 12.000', code: '11.500 - 12.000' },
+        { name:'12.000 - 12.500', code: '12.000 - 12.500' },
+        { name:'12.500 - 13.000', code: '12.500 - 13.000' },
+        { name:'13.000 - 13.500.', code: '13.000 - 13.500.' },
+        { name:'13.500 - 14.000', code: '13.500 - 14.000' },
+        { name:'14.000 - 14.500', code: '14.000 - 14.500' },
+        { name:'14.500 - 15.000', code: '14.500 - 15.000' },
+        { name:'15.000 - 15.500', code: '15.000 - 15.500' },
+
+        { name:'', code: '' },
+
+                                   { name:'', code: '' },
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
      
     ];
@@ -217,7 +304,7 @@ export const InputDemo = () => {
                                  <label htmlFor="autocomplete">Correo </label>
                             <InputText type="text" placeholder="Correo"  />
 
-                            
+
                         </div>
 
                       
