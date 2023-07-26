@@ -70,9 +70,13 @@ import { Knob } from 'primereact/knob';
         const [inputGroupValue, setInputGroupValue] = useState(false);
         const [selectedNode, setSelectedNode] = useState<TreeSelectSelectionKeysType | null>(null);
         const [treeSelectNodes, setTreeSelectNodes] = useState<TreeNode[]>([]);
-
+        const [tipoGenero, setGenero] = useState(null);
+        const [tipodesexo, setSexo] = useState(null);
       
-    const [tipodoc, setTipoDoc] = useState(null);
+           const [tipodoc, setTipoDoc] = useState(null);
+           const [tipoetnia, setTipoEtnia] = useState(null);
+
+    
     const tipoDoc = [
         { name: 'CC', code: 'CC' },
         { name: 'CE', code: 'CE' },
@@ -80,10 +84,13 @@ import { Knob } from 'primereact/knob';
         { name: 'PA', code: 'PA' },
     ];
 
-    const [tiposexo, setSexo] = useState(null);
+   
+
+
     const tipoSexo = [
-        { name: 'F', code: 'F' },
-        { name: 'M', code: 'M' },
+        { name: 'Mujer', code: 'F' },
+        { name: 'Masculino', code: 'M' },
+        { name: 'Indeterminado', code: 'Intermedio/intersexual' },
    
     ];
 
@@ -152,6 +159,38 @@ import { Knob } from 'primereact/knob';
        
     ];
         
+      const identidad_de_Genero = [
+        { name: 'Masculino', code: 'Masculino' },
+        { name: 'Femenino', code: 'Femenino' },
+        { name: 'Transgénero ', code: 'Transgénero ' },
+          { name: 'Neutro ', code: 'Neutro ' },
+           { name: 'No lo declara ', code: 'No lo declara' },
+
+           
+        
+       
+    ];
+
+       
+      const pertencia_Etnica  = [
+        { name: 'Indígena', code: 'Indígena' },
+        { name: 'ROM', code: 'ROM' },
+        { name: 'Raizal (san ándrés y providencia)', code: 'Raizal (san ándrés y providencia)' },
+          { name: 'Palenquero de sanbasilio de paleque', code: 'Palenquero de sanbasilio de paleque' },
+           { name: 'Negro', code: 'Negro' },
+            { name: 'Afrocolombiano', code: 'Afrocolombiano' },
+              { name: 'ninguna de las anteriores', code: 'ninguna de las anteriores' },
+
+          
+
+           
+        
+       
+    ];
+
+
+
+
     
 
     return (
@@ -161,11 +200,11 @@ import { Knob } from 'primereact/knob';
                     <h5>Paciente DHI Nacional y Extranjero</h5>
 
                      <div className="field">
-                            <label htmlFor="tipo_id">Tipo Doc -US  cargar Paises</label>
+                            <label htmlFor="tipo_id">Tipo Doc -US  cargar Paises RES 1995</label>
                             <Dropdown id="tipo_id" value={tipodoc} onChange={(e) => setTipoDoc(e.value)} options={tipoDoc} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
                     <div className="field">
-                        <label htmlFor="identificacion">Identificación -US</label>
+                        <label htmlFor="identificacion">Identificación -US RES 1995</label>
                         <InputText id="identificacion" type="text" />
                     </div>
                      <div className="field">
@@ -184,7 +223,7 @@ import { Knob } from 'primereact/knob';
                 </div>  
 
                   <div className="field">
-                         <label htmlFor="fechanaci">Fecha Nacimiento</label>
+                         <label htmlFor="fechanaci">Fecha Nacimiento RES 1995</label>
                     <span className="p-float-label">
                         <label htmlFor="fechanaci">Fecha de Nacimiento</label>
                         <Calendar inputId="calendar" value={fechanaci} onChange={(e) => setFechaNaci(e.value)}></Calendar>
@@ -193,11 +232,11 @@ import { Knob } from 'primereact/knob';
          
                    
                     <div className="field">
-                        <label htmlFor="name1">Nombre 1 -US</label>
+                        <label htmlFor="name1">Nombre 1 -US RES 1995</label>
                         <InputText id="name1" type="text" />
                     </div>
                     <div className="field">
-                        <label htmlFor="name2">Nombre 2 -US</label>
+                        <label htmlFor="name2">Nombre 2 -US RES 1995</label>
                         <InputText id="name2" type="text" />
                     </div>
 
@@ -210,14 +249,24 @@ import { Knob } from 'primereact/knob';
                         <InputText id="apellido2" type="text" />
                     </div>
                     <div className="field">
-                        <label htmlFor="edad">Edad</label>
+                        <label htmlFor="edad">Edad RES 1995</label>
                         <InputText id="edad" type="text" />
                     </div>
 
 
                     <div className="field">
-                            <label htmlFor="sexo">sexo -US</label>
-                            <Dropdown id="sexo" value={tiposexo} onChange={(e) => setSexo(e.value)} options={tipoSexo} optionLabel="name" placeholder="Select One"></Dropdown>
+                            <label htmlFor="sexo1">sexo -US RES 1995</label>
+                            <Dropdown id="sexo1" value={tipodesexo} onChange={(e) => setSexo(e.value)} options={tipoSexo} optionLabel="name" placeholder="Select One"></Dropdown>
+                     </div>  
+
+                        <div className="field">
+                            <label htmlFor="sexo">Identidad de Genero -US RES 866</label>
+                            <Dropdown id="sexo" value={tipoGenero} onChange={(e) => setGenero(e.value)} options={identidad_de_Genero} optionLabel="name" placeholder="Select One"></Dropdown>
+                     </div>  
+
+                       <div className="field">
+                            <label htmlFor="sexo">Etnia -US RES 866</label>
+                            <Dropdown id="sexo" value={tipoetnia} onChange={(e) => setTipoEtnia(e.value)} options={pertencia_Etnica} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
 
                      <div className="field">
@@ -227,7 +276,7 @@ import { Knob } from 'primereact/knob';
 
                    
                     <div className="field">
-                            <label htmlFor="estado_civil">Estado Civil</label>
+                            <label htmlFor="estado_civil">Estado Civil </label>
                             <Dropdown id="estado_civil" value={estadocivil} onChange={(e) => setEstadoCivil(e.value)} options={EstadoCivil} optionLabel="name" placeholder="Select One"></Dropdown>
                      </div>  
                       <div className="field">
@@ -251,21 +300,21 @@ import { Knob } from 'primereact/knob';
                    <div className="field col">
                     <span className="p-float-label">
                         <Dropdown id="multiselect" options={cities} value={pais} onChange={(e) => setPais(e.value)} optionLabel="Pais"></Dropdown>
-                        <label htmlFor="multiselect">Pais</label>
+                        <label htmlFor="multiselect">Pais RES 1995</label>
                     </span>
                 </div>
 
                  <div className="field col">
                     <span className="p-float-label">
                         <Dropdown id="departamento" options={departa} value={departamento} onChange={(e) => setDepartamento(e.value)} optionLabel="Departamento"></Dropdown>
-                        <label htmlFor="departamento">Departamento US</label>
+                        <label htmlFor="departamento">Departamento US RES 1995</label>
                     </span>
                 </div>
                 
                 <div className="field col">
                     <span className="p-float-label">
                         <Dropdown id="municipio" options={Municipio} value={municipio} onChange={(e) => setMunicipio(e.value)} optionLabel="Municipio"></Dropdown>
-                        <label htmlFor="municipio">Municipio US</label>
+                        <label htmlFor="municipio">Municipio US RES 1995</label>
                     </span>
                   </div>
 
@@ -278,7 +327,7 @@ import { Knob } from 'primereact/knob';
                     </div>
 
                     <div className="field col">
-                        <label htmlFor="direccion">Dirección</label>
+                        <label htmlFor="direccion">Dirección RES 1995</label>
                         <InputText id="direccion" type="text" />
                     </div>
                  
@@ -400,15 +449,24 @@ import { Knob } from 'primereact/knob';
                     <h5>Datos Avanzados</h5>
                     <div className="p-fluid formgrid grid">
                         <div className="field col-12 md:col-6">
-                            <label htmlFor="acudiente">Acudiente:</label>
+                            <label htmlFor="acudiente">Acudiente: RES 1995</label>
                             <InputText id="acudiente" type="text" />
                         </div>   <div className="field col-12 md:col-6">
-                            <label htmlFor="telacudiente">Acudiente Telefono:</label>
+                            <label htmlFor="telacudiente">Acudiente Telefono RES 1995:</label>
                             <InputText id="telacudiente" type="text" />
                         </div>
 
+                     
+                         <div className="field col-12 md:col-6">
+                            <label htmlFor="ocupacion">Parentesco RES 1995</label>
+                            <InputText id="ocupacion" type="text" />
+                        </div>
+
+
+                        
+
                         <div className="field col-12 md:col-6">
-                            <label htmlFor="ocupacion">Ocupación</label>
+                            <label htmlFor="ocupacion">Ocupación RES 1995</label>
                             <InputText id="ocupacion" type="text" />
                         </div>
                         <div className="field col-12">
