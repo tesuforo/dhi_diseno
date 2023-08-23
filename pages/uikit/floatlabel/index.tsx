@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { InputTextarea } from "primereact/inputtextarea";
+import { InputText } from 'primereact/inputtext';
 import { InputNumber } from "primereact/inputnumber";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
 import { CountryService } from "../../../demo/service/CountryService";
 import { Demo } from "../../../types/types";
-import { RadioButton } from "primereact/radiobutton";
-import {
-  AutoComplete,
-  AutoCompleteCompleteEvent,
-} from "primereact/autocomplete";
+import {AutoCompleteCompleteEvent,} from "primereact/autocomplete";
 import { Accordion, AccordionTab } from "primereact/accordion";
+import { AutoComplete } from 'primereact/autocomplete';
+import { RadioButton } from 'primereact/radiobutton';
+
 
 const FloatLabelDemo = () => {
   const [countries, setCountries] = useState<Demo.Country[]>([]);
-  const [filteredCountries, setFilteredCountries] = useState<Demo.Country[]>(
-    []
-  );
+  const [filteredCountries, setFilteredCountries] = useState<Demo.Country[]>([]);
   const [tensiondiastolica, setTensionDiastolica] = useState(new Date());
   const [tensionsiastolica, setTensionSiastolica] = useState<any[]>([]);
   const [freuenciacardiaca, setFrecuenciaCardiaca] = useState("");
@@ -26,9 +24,7 @@ const FloatLabelDemo = () => {
   const [talla, setTalla] = useState("");
   const [temperatura, setTemperatura] = useState("");
   const [selectedAutoValue, setSelectedAutoValue] = useState(null);
-  const [autoFilteredValue, setAutoFilteredValue] = useState<Demo.Country[]>(
-    []
-  );
+  const [autoFilteredValue, setAutoFilteredValue] = useState<Demo.Country[]>([] );
   const [horaapertura, setHoraApertura] = useState("");
   const [motivoconsulta, setMotivoConsulta] = useState("");
   const [enfermedadactual, setEnfermedadActual] = useState("");
@@ -51,66 +47,74 @@ const FloatLabelDemo = () => {
   const [antecedentesmedicos, setAntecedentesMedicos] = useState("");
   const [desantecedentesmedicos, setDesAntecedentesMedicos] = useState("");
   const [antecedesfamiliares, setAntecedentesFamiliares] = useState("");
-  const [desantecedentesfamiliares, setDesAntecedentesFamiliares] =
-    useState("");
+  const [desantecedentesfamiliares, setDesAntecedentesFamiliares] =useState("");
   const [antecedentesquirurjicos, setAntecedentesQuirurgicos] = useState("");
-  const [desantecedentesquirurjicos, setDesAntecedentesQuirurgicos] =
-    useState("");
-  const [antecedenteshospitalarios, setAntecedentesHospitalarios] =
-    useState("");
-  const [desantecedenteshospitalarios, setDesAntecedentesHospitalarios] =
-    useState("");
+  const [desantecedentesquirurjicos, setDesAntecedentesQuirurgicos] =useState("");
+  const [antecedenteshospitalarios, setAntecedentesHospitalarios] = useState("");
+  const [desantecedenteshospitalarios, setDesAntecedentesHospitalarios] =useState("");
   const [antecedentesalergicos, setAntecedentesAlergicos] = useState("");
   const [desantecedentesalergicos, setDesAntecedentesAlergicos] = useState("");
-  const [antecedentesfarmacologicos, setAntecedentesFarmacologicos] =
-    useState("");
-  const [desantecedentesFarmacologicos, setDesAntecedentesFarmacologicos] =
-    useState("");
+  const [antecedentesfarmacologicos, setAntecedentesFarmacologicos] =useState("");
+  const [desantecedentesFarmacologicos, setDesAntecedentesFarmacologicos] =useState("");
   const [antecedentestoxicos, setAntecedentesToxicos] = useState("");
   const [desantecedentestoxicos, setDesAntecedentesToxicos] = useState("");
-  const [antecedentesginecobstetricos, setAntecedentesGinecobstetricos] =
-    useState("");
-  const [desantecedentesginecobstetricos, setDesAntecedentesGinecobstetricos] =
-    useState("");
-
+  const [antecedentesginecobstetricos, setAntecedentesGinecobstetricos] =useState("");
+  const [desantecedentesginecobstetricos, setDesAntecedentesGinecobstetricos] =useState("");
   const [tipocicatrizacion, settipocicatrizacion] = useState("");
   const [menarquia, setMenarquia] = useState("");
   const [gestas, setGestas] = useState("");
   const [planificacion, setPlanificacion] = useState("");
+  const [numerofoliculos, setNumeroFoliculos] = useState("");
+  const [numerofoliculoscejas, setNumeroFoliculosCejas] = useState("");
+  const [name1, setName1] = useState('');
   const [parto, setParto] = useState("");
   const [ciclo, setCiclo] = useState("");
   const [cesarea, setCesarea] = useState("");
   const [fum, setFUM] = useState("");
   const [aborto, setAborto] = useState("");
-
-  const [densidadexistenteoccipital, setDensidadExistenteOccipital] =
-    useState("");
+  const [densidadexistenteoccipital, setDensidadExistenteOccipital] =useState("");
   const [densidarestanteOccipital, setDensidadRestanteoccipital] = useState("");
   const [area1occipital, setArea1Occipital] = useState("");
   const [area2ccipital, setArea2Occipital] = useState("");
   const [areatotaloccipital, setAreaTotalOccipital] = useState("");
   const [numerofoliculosoccipital, setFoliculosOccipital] = useState("");
-
-   const [zonaadensidaexistente, setZonaaDensidaExistente] = useState("");
-    const [zonaadensidadrestante, setZonaadensidadrestante] = useState("");
-     const [zonaaareasdensidad, setZonaaareasdensidad] = useState("");
-     const [zonaabareasdensidad, setZonaabareasdensidad] = useState("");
-      const [zonaatotal, setZonaaTotal] = useState("");
-      const [zonaanumeropelos, setzonaanumeropelos] = useState("");
-      const [objetivodensidadpromedio, setobjetivodensidadpromedio] = useState("");
-
-      const [sesiones, setSesiones] = useState("");
-
-
-
-
-
+  const [zonaadensidaexistente, setZonaaDensidaExistente] = useState("");
+  const [zonaadensidadrestante, setZonaadensidadrestante] = useState("");
+  const [zonaaareasdensidad, setZonaaareasdensidad] = useState("");
+  const [zonaabareasdensidad, setZonaabareasdensidad] = useState("");
+  const [zonaatotal, setZonaaTotal] = useState("");
+  const [zonaanumeropelos, setzonaanumeropelos] = useState("");
+  const [objetivodensidadpromedio, setobjetivodensidadpromedio] = useState("");
+  const [sesiones, setSesiones] = useState("");
+  const [ingredient, setIngredient] = useState("");
+  const [notaaclaratoria, setNotaAclaratoria] = useState("");
+  const [notaaclaratoriaenfermerialavado, setNotaAclaratoriaEnfermeriaLavado] = useState("");
+  const [notafotoenfermeria, setNotaFotoEnfermeria] = useState("");
+  const [NOTAENFERMERIA, setNOTAENFERMERIA] = useState("");
+  const [notadeenfermeriaimplantecapilar, setNotaDeEnfermeriaImplanteCapilar] = useState("");
+  const [notarecepcion, setNotaRecepcion] = useState("");
   const [antecedesalopecia, setAntecedentesAlopecia] = useState("");
   const [desantecedentesAlopecia, setDesAntecedentesAlopecia] = useState("");
-
   const [alopecias, setAlopecias] = useState("");
   const [radioValue, setRadioValue] = useState(null);
   const [ta, setTA] = useState("Niega");
+
+   const [diaprocedimientoenfermeria, setDiaProcedimientoEnfermeria] = useState(null);
+   const [notaenfermeriadrenaje, setNotaEnfermeriaDrenaje] = useState(null);
+
+
+   const [implanteenfermeria, setImplanteEnfermeria] = useState(null);
+
+    const [category, setSelectedCategory] = useState(null);
+
+    const [terapias_enfermerias, setTerapiasEnfermeria] = useState(null);
+
+
+    
+    
+
+
+
 
   const cities = [
     { name: "New York", code: "NY" },
@@ -145,6 +149,45 @@ const FloatLabelDemo = () => {
     { name: "Confirmado Nuevo", code: "Confirmado Nuevo" },
     { name: "Confirmado Repetitivo", code: "Confirmado Repetitivo" },
   ];
+
+  const dia_procedimiento_enfermeria = [
+    { name: "dia1", code: "dia1" },
+    { name: "dia2", code: "dia2" },
+
+  ];
+
+  const implante_enfermeria = [
+    { name: "Capilar", code: "Capilar" },
+    { name: "Barba", code: "Barba" },
+    { name: "ceja", code: "Ceja" },
+    { name: "Mixto", code: "Mixto" },
+
+  ];
+
+
+   const categories = [
+    { name: "Capilar", code: "Capilar" },
+    { name: "Barba", code: "Barba" },
+    { name: "ceja", code: "Ceja" },
+    { name: "Mixto", code: "Mixto" },
+
+  ];
+
+
+    const terapias = [
+    { name: "No Aplica", code: "No Aplica" },
+    { name: "Choque", code: "Choque" },
+    { name: "Regular", code: "Regula" },
+    { name: "Standard", code: "Standard" },
+    { name: "Unica", code: "Unica" },
+    { name: "Dutasteride", code: "Dutastiride" },
+    { name: "Kenacort", code: "Kenacort" },
+
+  ];
+
+
+  
+
 
   useEffect(() => {
     CountryService.getCountries().then((countries) => {
@@ -4230,15 +4273,294 @@ const FloatLabelDemo = () => {
           </AccordionTab>
           <AccordionTab header="Cotizacion">
             <p>
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati cupiditate non
-              provident, similique sunt in culpa qui officia deserunt mollitia
-              animi, id est laborum et dolorum fuga. Et harum quidem rerum
-              facilis est et expedita distinctio. Nam libero tempore, cum soluta
-              nobis est eligendi optio cumque nihil impedit quo minus.
+               <div className="card">
+          <h5>Cotización</h5>
+          <div className="grid"></div>
+             
+            <div className="field">
+                        <label htmlFor="calculodefoliculos">Número de Folículos</label>
+                        <InputText id="calculodefoliculos" type="text" />
+                    </div>
+
+                     <div className="field">
+                        <label htmlFor="calculodefoliculosceja">Número de Folículos cejas</label>
+                        <InputText id="calculodefoliculoscejas" type="text" />
+                    </div>
+
+
+                     <h5>Cejas</h5>
+
+
+                     
+<div className="flex flex-wrap gap-3">
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
+        <label htmlFor="ingredient1" className="ml-2">Total</label>
+    </div>
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient2" name="pizza" value="Mushroom" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Mushroom'} />
+        <label htmlFor="ingredient2" className="ml-2">Parcial</label>
+    </div>
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient3" name="pizza" value="Pepper" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Pepper'} />
+        <label htmlFor="ingredient3" className="ml-2">No Aplica</label>
+    </div>
+   
+</div>
+
+
+ <h2>INSTRUCCIONES PREVIAS AL PROCEDIMIENTO</h2>
+
+<h5>
+1.NO fume 2 días antes del procedimiento. Evite ingerir bebidas alcohólicas 24 horas antes del procedimiento, Una semana antes del procedimiento NO tome Aspirina o cualquier medicamento que contenga Ácido Acetil Salicílico, vitaminas (especialmente vitamina E), Aloe, Ginseng, o cualquier suplemento nutricional. <br></br>
+2.Continúe tomando sus medicamentos en las dosis usuales para la hipertensión arterial, para la diabetes o para cualquier otra enfermedad que necesite control con medicamentos. Debe presentar de forma obligatoria el resultado de los laboratorios solicitados para la realización del procedimiento <br></br>
+3.Si se encuentra en tratamiento con Minoxidil, debe suspender su uso diez (10) días antes del procedimiento. Puede reiniciar su uso veinte (30) días después del procedimiento. <br></br>
+4.Lave su cabello en la mañana del día del procedimiento, No realice ningún tipo de corte de cabello antes del procedimiento. El cabello blanco o las canas deben teñirse antes del procedimiento Tome un desayuno ligero, evite la cafeína, té, café y jugo de naranja el día del procedimiento, use una camisa que tenga botones el día del procedimiento para facilitar su postura, Se recomienda no conducir ningún tipo de vehículo posterior al procedimiento. <br></br>
+Nota: Se explica al paciente la necesidad e importancia de la adherencia al tratamiento médico por vía oral, vía tópica, e inyectada. DHI Colombia y su personal médico queda totalmente exonerada del procedimiento de garantía y de los resultados del implante por incumplimiento de dicho tratamiento por parte del paciente.
+En el caso de realizarse implante de retoque de 12 a 18 meses posterior al procedimiento, el paciente deberá cubrir el costo de los instrumentos. Dicho valor oscila entre $1.500.000 a $2.000.000. <br></br>
+Confirmo que he leído y entendido las instrucciones del procedimiento implante directo de pelo y que me han informado todas las precauciones, los exámenes necesarios y los informes que tengo que presentar antes del procedimiento que estoy a punto de emprender. <br></br>
+
+EN CASO DE IMPLANTE FORMULA MEDICA
+
+SUSPENDER MINOXIDIL 10 DIAS ANTES DEL PROCEDIMIENTO Y RETOMAR 1 MES DESPUES
+
+1.DOXICICLINA TABLETA 100MG. TOMAR 1 TABLETA CADA 12 HORAS POR 7 DIAS
+2.DOLEX TABLETAS 500MG. EN CASO DE DOLOR 2 TAB CADA 8 HORAS POR 3 DIAS
+3.GASTRICUMEELTABLE TAS. DOS TABLETAS SUBLINGUALES AL DIA EN AYUNAS DURANTE 5 DIAS
+4.PREDNISOLONA TABLETAS 50mg.
+
+PRIMER DIA: 1TAB DIARIA AM.
+SEGUNDO DIA: 1TAB DIARIA AM.
+TERCER DIA: 1 TAB DIARIA AM.
+CUARTO DIA: 1 TAB DIARIA AM.
+QUINTO DIA: 1 TAB DIARIA AM.
+
+5. DRENAJE FACIAL (DESINFLAMATORIO)
+6. SUERO TERAPIA CAPILAR. (DESINFLAMATORIO)</h5>
+
+
+
+
+                    </div>
+                    
+
             </p>
           </AccordionTab>
+
+ <AccordionTab header="Nota Aclaratoria Medico">
+            <p>
+               <div className="card">
+          <h5>Nota Aclaratoria Medico</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notaaclaratoria} onChange={(e) => setNotaAclaratoria(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+          <AccordionTab header="Nota de Enfermeria - Lavado">
+            <p>
+               <div className="card">
+          <h5>Nota Aclaratoria Enfermera Lavado</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notaaclaratoriaenfermerialavado} onChange={(e) => setNotaAclaratoriaEnfermeriaLavado(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+
+
+          
+
+          <AccordionTab header="Nota de  Foto Enfermeria">
+            <p>
+               <div className="card">
+          <h5>Nota de Foto Enfermeria</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notafotoenfermeria} onChange={(e) => setNotaFotoEnfermeria(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+           <AccordionTab header="Nota de Recepción">
+            <p>
+               <div className="card">
+          <h5>Nota de Recepción</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notarecepcion} onChange={(e) => setNotaRecepcion(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+           <AccordionTab header="NOTA ENFERMERIA">
+            <p>
+               <div className="card">
+          <h5>NOTA ENFERMERIA</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={NOTAENFERMERIA} onChange={(e) => setNOTAENFERMERIA(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+
+
+           <AccordionTab header="Nota Enfermeria Implante Capilar">
+            <p>
+               <div className="card">
+
+
+
+
+          <h3>Nota Enfermeria-Procedimiento</h3>
+          <div className="grid"></div>
+          <br></br>
+
+              <h4>Dia de Procedimiento </h4>
+          <Dropdown value={diaprocedimientoenfermeria} onChange={(e) => setDiaProcedimientoEnfermeria(e.value)} options={dia_procedimiento_enfermeria} optionLabel="name"  placeholder="Seleccona el dia" className="w-full md:w-14rem" />
+             
+             <br></br>
+
+             <br></br>
+
+              <h4>Implante </h4>
+          <Dropdown value={implanteenfermeria} onChange={(e) => setImplanteEnfermeria(e.value)} options={implante_enfermeria} optionLabel="name"  placeholder="Seleccona el dia" className="w-full md:w-14rem" />
+             
+             <br></br>
+           
+        <InputTextarea autoResize value={notadeenfermeriaimplantecapilar} onChange={(e) => setNotaDeEnfermeriaImplanteCapilar(e.target.value)} rows={5} cols={30} />
+                    
+          <h4>No de sala de procedimientos  </h4>
+
+        <div className="flex flex-wrap gap-3">
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient1" name="pizza" value="Cheese" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Cheese'} />
+        <label htmlFor="ingredient1" className="ml-2">Sala 1 </label>
+    </div>
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient2" name="pizza" value="Mushroom" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Mushroom'} />
+        <label htmlFor="ingredient2" className="ml-2">Sala 4 </label>
+    </div>
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient3" name="pizza" value="Pepper" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Pepper'} />
+        <label htmlFor="ingredient3" className="ml-2">Sala 5</label>
+    </div>
+    <div className="flex align-items-center">
+        <RadioButton inputId="ingredient4" name="pizza" value="Onion" onChange={(e) => setIngredient(e.value)} checked={ingredient === 'Onion'} />
+        <label htmlFor="ingredient4" className="ml-2"> Sala 6  </label>
+    </div>
+</div>
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+
+
+           <AccordionTab header="Nota de Enfermeria - Drenajes">
+            <p>
+               <div className="card">
+          <h5>NOTA  ENFERMERIA DRENAJES</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notaenfermeriadrenaje} onChange={(e) => setNotaEnfermeriaDrenaje(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+           <AccordionTab header="Nota de Enfermeria Suero Terapia">
+            <p>
+               <div className="card">
+          <h5>NOTA ENFERMERIA SUERO TERAPIA</h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notaenfermeriadrenaje} onChange={(e) => setNotaEnfermeriaDrenaje(e.target.value)} rows={5} cols={30} />
+
+                    
+
+
+                    </div>
+                    
+
+            </p>
+          </AccordionTab>
+
+
+
+
+           <AccordionTab header="Nota de Enfermeria Terapia Nuevo">
+            <p>
+               <div className="card">
+          <h5>Nota de enfermería - Terapia </h5>
+          <div className="grid"></div>
+             
+           
+        <InputTextarea autoResize value={notaenfermeriadrenaje} onChange={(e) => setNotaEnfermeriaDrenaje(e.target.value)} rows={5} cols={30} />
+
+
+<br></br> 
+
+          
+                    
+
+
+                    </div>
+                    <Dropdown value={terapias_enfermerias} onChange={(e) => setTerapiasEnfermeria (e.value)} options={terapias} optionLabel="name"  placeholder="Terapia" className="w-full md:w-14rem" />
+                    
+
+            </p>
+          </AccordionTab>
+
+
+
         </Accordion>
       </div>
     </div>
