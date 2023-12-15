@@ -94,6 +94,7 @@ const FloatLabelDemo = () => {
   const [notadeenfermeriaimplantecapilar, setNotaDeEnfermeriaImplanteCapilar] = useState("");
   const [notarecepcion, setNotaRecepcion] = useState("");
   const [antecedesalopecia, setAntecedentesAlopecia] = useState("");
+  const [antecedesalopecianotamedica, setAntecedentesAlopecianotamedica] = useState("");
   const [desantecedentesAlopecia, setDesAntecedentesAlopecia] = useState("");
   const [alopecias, setAlopecias] = useState("");
   const [radioValue, setRadioValue] = useState(null);
@@ -108,6 +109,12 @@ const FloatLabelDemo = () => {
     const [category, setSelectedCategory] = useState(null);
 
     const [terapias_enfermerias, setTerapiasEnfermeria] = useState(null);
+
+     const [sesiones_enfermerias, setSesionesEnfermeria] = useState(null);
+
+     
+
+     
 
 
     
@@ -132,6 +139,38 @@ const FloatLabelDemo = () => {
   const antecedentes = [
     { name: "Niega", code: "Niega" },
     { name: "Refiere", code: "Refiere" },
+  ];
+
+    const antecedentesnotamedica = [
+    
+
+    { name: "Norwwod 1", code: "norwwod_1"},
+    { name: "Norwwod 2", code: "norwwod_2"},
+    { name: "Norwwod 3", code: "norwwod_3"},
+    { name: "Norwwod 3A", code: "Norwwod 3A"},
+    { name: "Norwwod 3 vértice", code: "Norwwod 3 vértice"},
+    { name: "Norwwod 4", code: "Norwwod 4"},
+    { name: "Norwwod 4A", code: "Norwwod 4A"},
+    { name: "Norwwod 5", code: "Norwwod 5"},
+    { name: "Norwwod 5A", code: "Norwwod 5A"},
+    { name: "Norwwod 6", code: "Norwwod 6"},
+    { name: "Norwwod 7", code: "Norwwod 7"},
+    { name: "Ludwing I-1", code: "Ludwing I-1"},
+    { name: "Ludwing I-2", code: "Ludwing I-2"},
+    { name: "Ludwing I-3", code: "Ludwing I-3"},
+    { name: "Ludwing I-4", code: "Ludwing I-4"},
+    { name: "Ludwing II-1", code: "Ludwing II-1"},
+    { name: "Ludwing II-2", code: "Ludwing II-2"},
+    { name: "Ludwing III", code: "Ludwing III"},
+     { name: "Ludwing avanzado", code: "Ludwing avanzado"},
+      { name: "Ludwing frontal", code: "Ludwing frontal"},
+       { name: "No aplica", code: "No aplica"},
+
+
+
+  
+
+
   ];
 
     const sesion = [
@@ -183,6 +222,24 @@ const FloatLabelDemo = () => {
     { name: "Dutasteride", code: "Dutastiride" },
     { name: "Kenacort", code: "Kenacort" },
 
+  ];
+
+    const sesioness = [
+    { name: "No Aplica", code: "No Aplica" },
+    { name: "Sesión 1", code: "Sesión 1 " },
+    { name: "Sesion 2", code: "Sesion 2" },
+    { name: "Sesion 3", code: "Sesion 3" },
+    { name: "Sesion 4", code: "Sesion 4" },
+    { name: "Sesion 5", code: "Sesion 5" },
+    { name: "Sesion 6", code: "Sesion 6" },
+    { name: "Sesion 7", code: "Sesion 7" },
+    { name: "Sesion 8", code: "Sesion 8" },
+    { name: "Sesion 9", code: "Sesion 9" },
+    { name: "Sesion 10", code: "Sesion 10" },
+    { name: "Sesion 11", code: "Sesion 11" },
+    { name: "Sesion 12", code: "Sesion 12" },
+    { name: "Sesion única", code: "Sesion única" },
+    { name: "Sesion Post-Implante", code: "Sesion Post-Implante" },
   ];
 
 
@@ -4553,11 +4610,237 @@ QUINTO DIA: 1 TAB DIARIA AM.
 
 
                     </div>
+                    <h5>Terapia </h5>
                     <Dropdown value={terapias_enfermerias} onChange={(e) => setTerapiasEnfermeria (e.value)} options={terapias} optionLabel="name"  placeholder="Terapia" className="w-full md:w-14rem" />
-                    
-
+                    <br></br> 
+                    <h5>Sesión </h5>
+                     <Dropdown value={sesiones_enfermerias} onChange={(e) => setSesionesEnfermeria (e.value)} options={sesiones} optionLabel="name"  placeholder="Terapia" className="w-full md:w-14rem" />
             </p>
           </AccordionTab>
+
+
+          <AccordionTab header="Nota Medica Terapia Nuevo">
+            <p>
+          
+          <h5>Nota Medica de Terapia </h5>
+          <div className="grid"></div>
+
+          <div className="card">
+                <h5> Signos Vitales</h5>
+                <div className="grid p-fluid mt-3">
+                  <div className="field col-12 md:col-3">
+                    <h5>Tension Arterial</h5>
+                    <InputNumber
+                      value={ta}
+                      onValueChange={(e) => setTA(e.value ?? null)}
+                      showButtons
+                      mode="decimal"
+                    ></InputNumber>
+                  </div>
+
+                 
+
+                  <div className="field col-12 md:col-3">
+                    <h5>FC</h5>
+                    <InputNumber
+                      value={ta}
+                      onValueChange={(e) => setTA(e.value ?? null)}
+                      showButtons
+                      mode="decimal"
+                    ></InputNumber>
+                  </div>
+
+                  <div className="field col-12 md:col-3">
+                    <h5>FR</h5>
+                    <InputNumber
+                      value={ta}
+                      onValueChange={(e) => setTA(e.value ?? null)}
+                      showButtons
+                      mode="decimal"
+                    ></InputNumber>
+                  </div>
+
+                  <div className="field col-12 md:col-3">
+                    <h5>T</h5>
+                    <InputNumber
+                      value={ta}
+                      onValueChange={(e) => setTA(e.value ?? null)}
+                      showButtons
+                      mode="decimal"
+                    ></InputNumber>
+                  </div>
+
+                  <div className="field col-12 md:col-3">
+                    <h5>Saturación Oxigeno</h5>
+                    <InputNumber
+                      value={ta}
+                      onValueChange={(e) => setTA(e.value ?? null)}
+                      showButtons
+                      mode="decimal"
+                    ></InputNumber>
+                  </div>
+
+</div>
+             
+           
+        
+
+
+<br></br> 
+
+ <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="antecedentes_alopecia"
+                  options={antecedentesnotamedica}
+                  value={antecedesalopecianotamedica}
+                  onChange={(e) => setAntecedentesAlopecianotamedica(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="antecedentes_alopecia">
+                  {" "}
+                  Antecedentes Alopecia{" "}
+                </label>
+              </span>
+            </div>
+
+
+            <div className="col-12 mb-2 lg:col-4 lg:mb-0">
+                  <h5>Nota Medica</h5>
+                    <InputTextarea placeholder=" Tus Observaciones" autoResize rows={3} cols={30} />
+                   </div>
+
+           
+                    
+
+
+                    </div>
+
+                     <div className="field">
+                        <label htmlFor="identificacion">Auxiliar de Enfermeria</label>
+                        <InputText id="identificacion" type="text" />
+                    </div>
+
+                     
+                    
+                    <br></br> 
+                     
+                       
+<div className="card">
+          <div className="grid">
+            <div className="field col-12 md:col-3">
+              <h5>Diagnostico Cie 10</h5>
+              <AutoComplete
+                placeholder="Search"
+                id="dd"
+                dropdown
+                multiple
+                value={selectedAutoValue}
+                onChange={(e) => setSelectedAutoValue(e.value)}
+                suggestions={autoFilteredValue}
+                completeMethod={searchCountry}
+                field="name"
+              />
+            </div>
+
+            <div className="field col-12 md:col-3">
+              <h5>Observaciones</h5>
+              <InputTextarea
+                placeholder="Your Message"
+                autoResize
+                rows={3}
+                cols={30}
+              />
+            </div>
+
+            <div className="field col-12 md:col-3"></div>
+
+            <div className="field col-12 md:col-3"></div>
+
+            <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="zona"
+                  options={dx1}
+                  value={dx1}
+                  onChange={(e) => setAlopecias(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="zona">DX1</label>
+              </span>
+            </div>
+            <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="zona"
+                  options={dx1}
+                  value={dx1}
+                  onChange={(e) => setAlopecias(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="zona">DX2</label>
+              </span>
+            </div>
+
+            <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="zona"
+                  options={alopecia}
+                  value={alopecias}
+                  onChange={(e) => setAlopecias(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="zona">DX3</label>
+              </span>
+            </div>
+
+            <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="zona"
+                  options={alopecia}
+                  value={alopecias}
+                  onChange={(e) => setAlopecias(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="zona">DX4</label>
+              </span>
+            </div>
+
+            <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="zona"
+                  options={alopecia}
+                  value={alopecias}
+                  onChange={(e) => setAlopecias(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="zona">DX5</label>
+              </span>
+            </div>
+
+            <div className="field col-12 md:col-3">
+              <span className="p-float-label">
+                <Dropdown
+                  id="zona"
+                  options={alopecia}
+                  value={alopecias}
+                  onChange={(e) => setAlopecias(e.value)}
+                  optionLabel="name"
+                ></Dropdown>
+                <label htmlFor="zona">DX5</label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+
+                     
+            </p>
+          </AccordionTab>
+
 
 
 
